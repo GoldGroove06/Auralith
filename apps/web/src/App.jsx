@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -7,6 +7,7 @@ import Result from './result'
 function App() {
   const [search, setSearch] = useState('')
   const [results, setResults] = useState(null)
+  const audioRef = useRef(null)
 
   function parseTidalSearchResponse(response) {
   const included = response.included || [];
@@ -119,16 +120,14 @@ myHeaders.append("Authorization", `Bearer ${import.meta.env.VITE_BEARER_TOKEN}`)
 };
 
 
-console.log(import.meta.env.VITE_BEARER_TOKEN)
+
     const res = await fetch(`https://openapi.tidal.com/v2/searchResults/${search}?explicitFilter=INCLUDE&countryCode=US&include=tracks,tracks.artists,tracks.albums,tracks.albums.coverArt`, requestOptions)
     const data = await res.json()
-    console.log(data)
-    
     setResults(parseTidalSearchResponse(data))
     
   }
 
-console.log(results)
+
   async function getQobuzId(isrc) {
    
   try {
@@ -140,8 +139,6 @@ console.log(results)
 
     const qobuzId =
       data.data?.tracks?.items?.[0]?.id;
-    console.log(data);  
-    console.log(qobuzId);
 
     return qobuzId;
   } catch (err) {
@@ -151,20 +148,15 @@ console.log(results)
 
   async function playSong(isrc) {
     const qobuzId = await getQobuzId(isrc);
-    console.log(qobuzId);
     const streamUrl = await fetch(`https://qobuz.kennyy.com.br/api/download-music?track_id=${qobuzId}&quality=27`);
     const data = await streamUrl.json();
-    console.log(data);
-    console.log(qobuzId);
-    const audio = new Audio(
-  data.data.url
-);
-
-audio.play();
+    audioRef.current.src = data.data.url;
+    audioRef.current.play();
   }
   return (
     <>
       <div>
+        <audio ref={audioRef} controls></audio>
         <input type="search" value={search} onChange={(e) => setSearch(e.target.value)} />
         <button onClick={getSearch}>Search</button>
         {results && <Result results={results} playSong={playSong}/>}
