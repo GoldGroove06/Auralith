@@ -1,7 +1,9 @@
 function Result({results, playSong}) {
 
   return (
-    <div>
+    <div style={{
+      display: "grid",
+      gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "5rem",}}>
       {results.map((track) => {
         // const coverId =
         //   album.relationships.coverArt.data[0]?.id;
@@ -16,9 +18,9 @@ function Result({results, playSong}) {
               alt={track.album.title}
               width={200}
             />
-            <h1>{track.title}</h1>
+            <h3>{track.title}</h3>
 
-            <h2>{track.album.title}</h2>
+            <h5>{track.album.title}</h5>
 
             <p>{track.artist.name}</p>
           </div>

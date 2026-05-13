@@ -154,15 +154,18 @@ myHeaders.append("Authorization", `Bearer ${import.meta.env.VITE_BEARER_TOKEN}`)
     audioRef.current.play();
   }
   return (
-    <>
-      <div>
-        <audio ref={audioRef} controls></audio>
+    <div style={{position: "relative"}}>
+    <nav>
+      <h1>Auralith</h1>
+    </nav>
+      <div style={{display: "flex", flexDirection: "column", alignItems: "center", maxHeight: "70vh", overflowY: "auto"}}>
+       
         <input type="search" value={search} onChange={(e) => setSearch(e.target.value)} />
         <button onClick={getSearch}>Search</button>
         {results && <Result results={results} playSong={playSong}/>}
       </div>
-    
-    </>
+     <audio ref={audioRef} controls style={{position: "absolute", bottom: 0}}></audio>
+    </div>
   )
 }
 
