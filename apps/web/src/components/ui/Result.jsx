@@ -1,4 +1,4 @@
-function Result({results, playSong}) {
+function Result({results, playSong, audioRef}) {
 
   return (
     <div style={{
@@ -11,7 +11,7 @@ function Result({results, playSong}) {
         // const imageUrl = album.relationships.coverArt.data.links.self
       
         return (
-            <button onClick={() => {playSong(track.isrc)}}>
+            <button onClick={() => {playSong(track.isrc, audioRef, track)}}>
           <div key={track.id}>
             <img
               src={track.artwork?.url}
