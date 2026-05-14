@@ -4,6 +4,7 @@ export const usePlayStore = create((set) => ({
     currentTrackData: null,
     setCurrentTrackData: (trackData) => set({ currentTrackData: trackData }),
 }))
+
 async function getQobuzId(isrc) {
 
     try {
