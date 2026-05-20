@@ -3,6 +3,8 @@ import {create} from 'zustand'
 export const usePlayStore = create((set) => ({
     currentTrackData: null,
     setCurrentTrackData: (trackData) => set({ currentTrackData: trackData }),
+    queue: [],
+    setQueue: (queue) => set({ queue: { trackData, trackPlayData} }),
 }))
 
 async function getQobuzId(isrc) {

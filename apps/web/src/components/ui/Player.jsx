@@ -15,6 +15,7 @@ const SoundMuteIcon = () => (<svg width="15" height="15" viewBox="0 0 15 15" fil
 
 const Player = ({ audioRef }) => {
     const [playerTimer, setPlayerTimer] = useState(0)
+    const [volume, setVolume] = useState(100)
     const currentTrackData = usePlayStore((state) => state.currentTrackData)
 
     useEffect(() => {
@@ -48,47 +49,54 @@ const Player = ({ audioRef }) => {
     return (
         <div className='w-full flex flex-col items-center border-t border-gray-300'>
             <div className='w-full flex flex-row'>
-            
-            
-            {Math.floor(playerTimer)}
-             <Slider.Root value={playerTimer} maxValue={Math.floor(audioRef.current?.duration)} minValue={0} onValueChange={(value) => {audioRef.current.currentTime = value}} className="!w-full !w-screen">
-            <Slider.Track value={playerTimer}>
-                <Slider.Range value={playerTimer}>
-                    <Slider.Thumb aria-label="Value" />
-                </Slider.Range>
-            </Slider.Track>
-        </Slider.Root>
-        {Math.floor(audioRef.current?.duration)}
-        
-        </div>
 
-        
-        <div className='flex flex-row w-full items-center justify-between'>
-           
-            <div className='flex flex-row items-center gap-4'>
-                <img
-                    src={currentTrackData?.artwork?.url}
-                    alt={currentTrackData?.album?.title}
-                    width={40}
-                />
-                <div>
-                    <span>{currentTrackData?.title.slice(0, 35)+ "..."}</span>
-                    <div className='flex flex-row gap-2 text-sm text-gray-800'>
-                        {currentTrackData?.explicit && <span>E</span>}•
-                        <span>{currentTrackData?.album?.title}</span>•
-                        <p>{currentTrackData?.artist?.name}</p>•
-                        {currentTrackData?.album?.releaseDate.split("-")[0]}
 
+                {Math.floor(playerTimer)}
+                <Slider.Root value={playerTimer} max={Math.floor(audioRef.current?.duration)} min={0} onValueChange={(value) => { audioRef.current.currentTime = value; setPlayerTimer(value) }} className="!w-full !w-screen">
+                    <Slider.Track>
+                        <Slider.Range>
+                            <Slider.Thumb aria-label="Value" />
+                        </Slider.Range>
+                    </Slider.Track>
+                </Slider.Root>
+                {Math.floor(audioRef.current?.duration)}
+
+            </div>
+            <Slider.Root value={volume} max={100} min={0} onValueChange={(value) => { audioRef.current.volume = value / 100; setVolume(value) }} className="!w-24">
+                    <Slider.Track>
+                        <Slider.Range>
+                            <Slider.Thumb aria-label="Value" />
+                        </Slider.Range>
+                    </Slider.Track>
+                </Slider.Root>
+
+
+            <div className='flex flex-row w-full items-center justify-between'>
+
+                <div className='flex flex-row items-center gap-4'>
+                    <img
+                        src={currentTrackData?.artwork?.url}
+                        alt={currentTrackData?.album?.title}
+                        width={40}
+                    />
+                    <div>
+                        <span>{currentTrackData?.title.slice(0, 35) + "..."}</span>
+                        <div className='flex flex-row gap-2 text-sm text-gray-800'>
+                            {currentTrackData?.explicit && <span>E</span>}•
+                            <span>{currentTrackData?.album?.title}</span>•
+                            <p>{currentTrackData?.artist?.name}</p>•
+                            {currentTrackData?.album?.releaseDate.split("-")[0]}
+
+                        </div>
                     </div>
                 </div>
-            </div>
-            
-            
-            <Button><PreviousTrackIcon /></Button>
 
-            <Button onClick={togglePlay}>{audioRef.current?.paused ? <PlayIcon /> : <PauseIcon />}</Button>
-            <Button><NextTrackIcon /></Button>
-        </div>
+
+                <Button><PreviousTrackIcon /></Button>
+
+                <Button onClick={togglePlay}>{audioRef.current?.paused ? <PlayIcon /> : <PauseIcon />}</Button>
+                <Button><NextTrackIcon /></Button>
+            </div>
         </div>
     )
 }
