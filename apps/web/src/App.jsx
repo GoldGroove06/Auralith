@@ -6,10 +6,20 @@ import Progress from "@radui/ui/Progress";
 import { useSearchStore } from './components/utils/Search.js';
 import Player from './components/ui/player.jsx';
 import play from './components/utils/play.js';
+import { usePlayStore } from './components/utils/play.js';
 
 function App() {
   const audioRef = useRef(null)
   const [playerTimer, setPlayerTimer] = useState(0)
+  const currentTrackUrl = usePlayStore((state) => state.currentTrackUrl)
+  
+  useEffect(() => {
+    if (currentTrackUrl) {
+      audioRef.current.src = currentTrackUrl;
+      audioRef.current.play();
+    }
+  }, [currentTrackUrl])
+
   // const resultsFromStore = useSearchStore((state) => state.searchResults)
   const resultsFromStore = [
     {
@@ -1438,7 +1448,7 @@ function App() {
     <div style={{ position: "relative" }} className="h-screen">
 
       <div style={{ display: "flex", flexDirection: "column", alignItems: "center", maxHeight: "70vh", overflowY: "auto" }}>
-        {resultsFromStore.length > 0 && <Result results={resultsFromStore} playSong={play} audioRef={audioRef} />}
+        {resultsFromStore.length > 0 && <Result results={resultsFromStore} />}
       </div>
       <audio ref={audioRef} className='hidden'></audio>
       <Player audioRef={audioRef} />
