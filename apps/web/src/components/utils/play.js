@@ -1,5 +1,5 @@
 import { create } from 'zustand'
-import { usePlaylistStore } from './playlist';
+import { trackRecommendation } from './trackRecommendation';
 
 export const usePlayStore = create((set) => ({
   currentTrackData: null,
@@ -48,6 +48,7 @@ const play = async (isrc, trackData) => {
   }
   usePlayStore.getState().setCurrentTrackData(trackData)
   usePlayStore.getState().setCurrentTrackUrl(data.data.url)
+  trackRecommendation(isrc)
   return data.data.url
 }
 
