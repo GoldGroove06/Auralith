@@ -44,7 +44,7 @@ const play = async (isrc, trackData) => {
   const streamUrl = await fetch(`https://qobuz.kennyy.com.br/api/download-music?track_id=${qobuzId}&quality=27`);
   const data = await streamUrl.json();
   if(usePlayStore.getState().currentTrackData == null) {
-    usePlayStore.getState().addToqueue(trackData)
+    usePlayStore.getState().addToQueue(trackData)
   }
   usePlayStore.getState().setCurrentTrackData(trackData)
   usePlayStore.getState().setCurrentTrackUrl(data.data.url)

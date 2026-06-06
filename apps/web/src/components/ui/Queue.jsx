@@ -2,6 +2,7 @@ import { usePlayStore } from "../utils/play"
 
 function Queue() {
     const currentTrackData = usePlayStore((state) => state.currentTrackData)
+    const queue = usePlayStore((state) => state.queue)
     console.log(currentTrackData)
     return (    
         <div className="flex flex-row align-center items-center">
@@ -12,9 +13,7 @@ function Queue() {
                         width={300}
                     />
             </div>
-            <div>
-
-            </div>
+            {/* {queue } */}
         </div>
     )
 }

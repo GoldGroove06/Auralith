@@ -9,11 +9,12 @@ import play from './components/utils/play.js';
 import { usePlayStore } from './components/utils/play.js';
 import Navbar from "./components/ui/Navbar.jsx"
 import Queue from './components/ui/Queue.jsx';
+import Dialog from "@radui/ui/Dialog";
 
 function App() {
     const audioRef = useRef(null)
     const [playerTimer, setPlayerTimer] = useState(0)
-    const [isQueueOpen, setIsQueueOpen] = useState(true)
+    const [isQueueOpen, setIsQueueOpen] = useState(false)
     const currentTrackUrl = usePlayStore((state) => state.currentTrackUrl)
 
     useEffect(() => {
@@ -1455,23 +1456,36 @@ function App() {
     return (
         <div style={{ position: "relative" }} className="h-screen">
             <Navbar />
-            <div style={{ display: "flex", flexDirection: "column", alignItems: "center", height: "80vh", overflowY: "auto" }}>
-
-                {
-                    isQueueOpen ? (
-                        <Queue />
-                    )
-                        : (
-
-                            <>
-                                {resultsFromStore.length > 0 && <Result results={resultsFromStore} />}
-                            </>
-
-                        )
+            <div style={{ display: "flex", flexDirection: "column", alignItems: "center", height: "80vh"}} className='relative'>
+                {resultsFromStore.length > 0 && <Result results={resultsFromStore} />}
+                {isQueueOpen &&
+                <div className='absolute min-h-full min-w-full top-0'>
+                    <Queue/>
+                </div>
                 }
+                
             </div>
             <audio ref={audioRef} className='hidden'></audio>
-            <Player audioRef={audioRef} handleQueueOpen={handleQueueOpen}/>
+            <Player audioRef={audioRef} handleQueueOpen={handleQueueOpen} />
+            {/* <Dialog.Root open={isQueueOpen} onOpenChange={handleQueueOpen} onClickOutside={() => {}}>
+                <Dialog.Trigger>
+                    Open Dialog
+                </Dialog.Trigger>
+                 <Dialog.Portal> 
+                    <Dialog.Overlay />
+                    <Dialog.Content>
+                        <Dialog.Title>
+                            This message will self destruct in 10 seconds
+                        </Dialog.Title>
+                        <Dialog.Description>
+                            Just kidding, it will not self destruct.
+                        </Dialog.Description>
+                        <Dialog.Close>
+                            close
+                        </Dialog.Close>
+                    </Dialog.Content>
+                </Dialog.Portal>
+            </Dialog.Root> */}
 
         </div>
     )

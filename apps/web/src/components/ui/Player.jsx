@@ -19,8 +19,6 @@ const Player = ({ audioRef, handleQueueOpen }) => {
     const [playerTimer, setPlayerTimer] = useState(0)
     const [volume, setVolume] = useState(localStorage.getItem('volume'))
     const currentTrackData = usePlayStore((state) => state.currentTrackData)
-    console.log(volume)
-    console.log(localStorage.getItem('volume'))
     useEffect(() => {
         localStorage.setItem('volume', volume)
     }, [volume])
