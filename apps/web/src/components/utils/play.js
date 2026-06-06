@@ -6,16 +6,16 @@ export const usePlayStore = create((set) => ({
   currentTrackUrl: null,
   setCurrentTrackUrl: (trackUrl) => set({ currentTrackUrl: trackUrl }),
   setCurrentTrackData: (trackData) => set({ currentTrackData: trackData }),
-  playlist: {},
-  addToPlaylist: (trackData) => set((state) => ({
-    playlist: {
-      ...state.playlist,
+  queue: {},
+  addToQueue: (trackData) => set((state) => ({
+    queue: {
+      ...state.queue,
       [trackData.isrc]: trackData
     }
   }
   )),
-  removeFromPlaylist: (isrc) => set({
-    playlist: {}
+  removeFromqueue: (isrc) => set({
+    queue: {}
   })
 }))
 
@@ -44,7 +44,7 @@ const play = async (isrc, trackData) => {
   const streamUrl = await fetch(`https://qobuz.kennyy.com.br/api/download-music?track_id=${qobuzId}&quality=27`);
   const data = await streamUrl.json();
   if(usePlayStore.getState().currentTrackData == null) {
-    usePlayStore.getState().addToPlaylist(trackData)
+    usePlayStore.getState().addToqueue(trackData)
   }
   usePlayStore.getState().setCurrentTrackData(trackData)
   usePlayStore.getState().setCurrentTrackUrl(data.data.url)
@@ -56,12 +56,12 @@ export const playNext = async () => {
   console.log("into play next function")
   const currentIsrc = usePlayStore.getState().currentTrackData.isrc
 
-  const playlist  = usePlayStore.getState().playlist
+  const queue  = usePlayStore.getState().queue
 
-  const keys = Object.keys(playlist);
+  const keys = Object.keys(queue);
   const currentIndex = keys.indexOf(currentIsrc)
   const nextKey = keys[currentIndex + 1]
-  const nextSong = playlist[nextKey]
+  const nextSong = queue[nextKey]
   console.log("next song", nextSong)
   play(nextKey, nextSong)
 }

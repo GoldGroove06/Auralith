@@ -5,9 +5,9 @@ import play from '../utils/play';
 
 function Result({ results, playSong}) {
   const queue = usePlayStore((state) => state.queue)
-  const addToPlaylist  = usePlayStore((state) => state.addToPlaylist)
-  const playlist  = usePlayStore((state) => state.playlist)
-  console.log(playlist)
+  const addToQueue  = usePlayStore((state) => state.addToQueue)
+  const queue  = usePlayStore((state) => state.queue)
+  console.log(queue)
 
   return (
     <div style={{
@@ -40,7 +40,7 @@ function Result({ results, playSong}) {
             </ContextMenu.Trigger>
             <ContextMenu.Portal>
               <ContextMenu.Content >
-                <Button onClick={() => addToPlaylist(track) } >Play Next</Button>
+                <Button onClick={() => addToQueue(track) } >Play Next</Button>
               </ContextMenu.Content>
             </ContextMenu.Portal>
           </ContextMenu.Root>

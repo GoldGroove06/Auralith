@@ -12,12 +12,18 @@ const PreviousTrackIcon = () => (<svg width="15" height="15" viewBox="0 0 15 15"
 const SoundLoudIcon = () => (<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.46968 1.05085C7.64122 1.13475 7.75 1.30904 7.75 1.5V13.5C7.75 13.691 7.64122 13.8653 7.46968 13.9492C7.29813 14.0331 7.09377 14.0119 6.94303 13.8947L3.2213 11H1.5C0.671571 11 0 10.3284 0 9.5V5.5C0 4.67158 0.671573 4 1.5 4H3.2213L6.94303 1.10533C7.09377 0.988085 7.29813 0.966945 7.46968 1.05085ZM6.75 2.52232L3.69983 4.89468C3.61206 4.96294 3.50405 5 3.39286 5H1.5C1.22386 5 1 5.22386 1 5.5V9.5C1 9.77615 1.22386 10 1.5 10H3.39286C3.50405 10 3.61206 10.0371 3.69983 10.1053L6.75 12.4777V2.52232ZM10.2784 3.84804C10.4623 3.72567 10.7106 3.77557 10.833 3.95949C12.2558 6.09798 12.2558 8.90199 10.833 11.0405C10.7106 11.2244 10.4623 11.2743 10.2784 11.1519C10.0944 11.0296 10.0445 10.7813 10.1669 10.5973C11.4111 8.72728 11.4111 6.27269 10.1669 4.40264C10.0445 4.21871 10.0944 3.97041 10.2784 3.84804ZM12.6785 1.43044C12.5356 1.2619 12.2832 1.24104 12.1147 1.38386C11.9462 1.52667 11.9253 1.77908 12.0681 1.94762C14.7773 5.14488 14.7773 9.85513 12.0681 13.0524C11.9253 13.2209 11.9462 13.4733 12.1147 13.6161C12.2832 13.759 12.5356 13.7381 12.6785 13.5696C15.6406 10.0739 15.6406 4.92612 12.6785 1.43044Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path></svg>)
 const SoundMuteIcon = () => (<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.72361 1.05279C7.893 1.13749 8 1.31062 8 1.5V13.5C8 13.6894 7.893 13.8625 7.72361 13.9472C7.55421 14.0319 7.35151 14.0136 7.2 13.9L3.33333 11H1.5C0.671573 11 0 10.3284 0 9.5V5.5C0 4.67158 0.671573 4 1.5 4H3.33333L7.2 1.1C7.35151 0.986371 7.55421 0.968093 7.72361 1.05279ZM7 2.5L3.8 4.9C3.71345 4.96491 3.60819 5 3.5 5H1.5C1.22386 5 1 5.22386 1 5.5V9.5C1 9.77614 1.22386 10 1.5 10H3.5C3.60819 10 3.71345 10.0351 3.8 10.1L7 12.5V2.5ZM14.8536 5.14645C15.0488 5.34171 15.0488 5.65829 14.8536 5.85355L13.2071 7.5L14.8536 9.14645C15.0488 9.34171 15.0488 9.65829 14.8536 9.85355C14.6583 10.0488 14.3417 10.0488 14.1464 9.85355L12.5 8.20711L10.8536 9.85355C10.6583 10.0488 10.3417 10.0488 10.1464 9.85355C9.95118 9.65829 9.95118 9.34171 10.1464 9.14645L11.7929 7.5L10.1464 5.85355C9.95118 5.65829 9.95118 5.34171 10.1464 5.14645C10.3417 4.95118 10.6583 4.95118 10.8536 5.14645L12.5 6.79289L14.1464 5.14645C14.3417 4.95118 14.6583 4.95118 14.8536 5.14645Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path></svg>)
 const QueueIcon = () => (<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 5.25C1.91421 5.25 2.25 4.91421 2.25 4.5C2.25 4.08579 1.91421 3.75 1.5 3.75C1.08579 3.75 0.75 4.08579 0.75 4.5C0.75 4.91421 1.08579 5.25 1.5 5.25ZM4 4.5C4 4.22386 4.22386 4 4.5 4H13.5C13.7761 4 14 4.22386 14 4.5C14 4.77614 13.7761 5 13.5 5H4.5C4.22386 5 4 4.77614 4 4.5ZM4.5 7C4.22386 7 4 7.22386 4 7.5C4 7.77614 4.22386 8 4.5 8H13.5C13.7761 8 14 7.77614 14 7.5C14 7.22386 13.7761 7 13.5 7H4.5ZM4.5 10C4.22386 10 4 10.2239 4 10.5C4 10.7761 4.22386 11 4.5 11H13.5C13.7761 11 14 10.7761 14 10.5C14 10.2239 13.7761 10 13.5 10H4.5ZM2.25 7.5C2.25 7.91421 1.91421 8.25 1.5 8.25C1.08579 8.25 0.75 7.91421 0.75 7.5C0.75 7.08579 1.08579 6.75 1.5 6.75C1.91421 6.75 2.25 7.08579 2.25 7.5ZM1.5 11.25C1.91421 11.25 2.25 10.9142 2.25 10.5C2.25 10.0858 1.91421 9.75 1.5 9.75C1.08579 9.75 0.75 10.0858 0.75 10.5C0.75 10.9142 1.08579 11.25 1.5 11.25Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path></svg>)
+const HeartIcon = () => (<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.89346 2.35248C3.49195 2.35248 2.35248 3.49359 2.35248 4.90532C2.35248 6.38164 3.20954 7.9168 4.37255 9.33522C5.39396 10.581 6.59464 11.6702 7.50002 12.4778C8.4054 11.6702 9.60608 10.581 10.6275 9.33522C11.7905 7.9168 12.6476 6.38164 12.6476 4.90532C12.6476 3.49359 11.5081 2.35248 10.1066 2.35248C9.27059 2.35248 8.81894 2.64323 8.5397 2.95843C8.27877 3.25295 8.14623 3.58566 8.02501 3.88993C8.00391 3.9429 7.98315 3.99501 7.96211 4.04591C7.88482 4.23294 7.7024 4.35494 7.50002 4.35494C7.29765 4.35494 7.11523 4.23295 7.03793 4.04592C7.01689 3.99501 6.99612 3.94289 6.97502 3.8899C6.8538 3.58564 6.72126 3.25294 6.46034 2.95843C6.18109 2.64323 5.72945 2.35248 4.89346 2.35248ZM1.35248 4.90532C1.35248 2.94498 2.936 1.35248 4.89346 1.35248C6.0084 1.35248 6.73504 1.76049 7.20884 2.2953C7.32062 2.42147 7.41686 2.55382 7.50002 2.68545C7.58318 2.55382 7.67941 2.42147 7.79119 2.2953C8.265 1.76049 8.99164 1.35248 10.1066 1.35248C12.064 1.35248 13.6476 2.94498 13.6476 4.90532C13.6476 6.74041 12.6013 8.50508 11.4008 9.96927C10.2636 11.3562 8.92194 12.5508 8.00601 13.3664C7.94645 13.4194 7.88869 13.4709 7.83291 13.5206C7.64324 13.6899 7.3568 13.6899 7.16713 13.5206C7.11135 13.4709 7.05359 13.4194 6.99403 13.3664C6.0781 12.5508 4.73641 11.3562 3.59926 9.96927C2.39872 8.50508 1.35248 6.74041 1.35248 4.90532Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path></svg>)
+const HeartFilledIcon = () => (<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.35248 4.90532C1.35248 2.94498 2.936 1.35248 4.89346 1.35248C6.25769 1.35248 6.86058 1.92336 7.50002 2.93545C8.13946 1.92336 8.74235 1.35248 10.1066 1.35248C12.064 1.35248 13.6476 2.94498 13.6476 4.90532C13.6476 6.74041 12.6013 8.50508 11.4008 9.96927C10.2636 11.3562 8.92194 12.5508 8.00601 13.3664C7.94645 13.4194 7.88869 13.4709 7.83291 13.5206C7.64324 13.6899 7.3568 13.6899 7.16713 13.5206C7.11135 13.4709 7.05359 13.4194 6.99403 13.3664C6.0781 12.5508 4.73641 11.3562 3.59926 9.96927C2.39872 8.50508 1.35248 6.74041 1.35248 4.90532Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path></svg>)
 
-
-const Player = ({ audioRef }) => {
+const Player = ({ audioRef, handleQueueOpen }) => {
     const [playerTimer, setPlayerTimer] = useState(0)
-    const [volume, setVolume] = useState(100)
+    const [volume, setVolume] = useState(localStorage.getItem('volume'))
     const currentTrackData = usePlayStore((state) => state.currentTrackData)
+    console.log(volume)
+    console.log(localStorage.getItem('volume'))
+    useEffect(() => {
+        localStorage.setItem('volume', volume)
+    }, [volume])
 
     useEffect(() => {
         const audio = audioRef.current;
@@ -48,28 +54,23 @@ const Player = ({ audioRef }) => {
     };
 
     return (
-        <div className='w-full flex flex-col items-center border-t border-gray-300'>
+        <div className='w-full flex flex-col items-center relative'>
+            <Slider.Root value={playerTimer} max={Math.floor(audioRef.current?.duration)} min={0} onValueChange={(value) => { audioRef.current.currentTime = value; setPlayerTimer(value) }} className="!absolute !-top-4" style={{maxWidth:"99%"}}>
+                    <Slider.Track>
+                        <Slider.Range>
+                            <Slider.Thumb aria-label="Value" />
+                        </Slider.Range>
+                    </Slider.Track>
+                </Slider.Root>
             <div className='w-full flex flex-row'>
 
 
                 {Math.floor(playerTimer)}
-                <Slider.Root value={playerTimer} max={Math.floor(audioRef.current?.duration)} min={0} onValueChange={(value) => { audioRef.current.currentTime = value; setPlayerTimer(value) }} className="!w-full !w-screen">
-                    <Slider.Track>
-                        <Slider.Range>
-                            <Slider.Thumb aria-label="Value" />
-                        </Slider.Range>
-                    </Slider.Track>
-                </Slider.Root>
+                
                 {Math.floor(audioRef.current?.duration)}
 
             </div>
-            <Slider.Root value={volume} max={100} min={0} onValueChange={(value) => { audioRef.current.volume = value / 100; setVolume(value) }} className="!w-24">
-                    <Slider.Track>
-                        <Slider.Range>
-                            <Slider.Thumb aria-label="Value" />
-                        </Slider.Range>
-                    </Slider.Track>
-                </Slider.Root>
+           
 
 
             <div className='flex flex-row w-full items-center justify-between'>
@@ -92,11 +93,27 @@ const Player = ({ audioRef }) => {
                     </div>
                 </div>
 
+            <div>
 
+            
                 <Button><PreviousTrackIcon /></Button>
 
                 <Button onClick={togglePlay}>{audioRef.current?.paused ? <PlayIcon /> : <PauseIcon />}</Button>
                 <Button onClick={playNext}><NextTrackIcon /></Button>
+                </div>
+                <div>
+                     <Slider.Root value={volume} max={100} min={0} onValueChange={(value) => { audioRef.current.volume = value / 100; setVolume(value) }} className="!w-24">
+                    <Slider.Track>
+                        <Slider.Range>
+                            <Slider.Thumb aria-label="Value" />
+                        </Slider.Range>
+                    </Slider.Track>
+                </Slider.Root>
+                <div className='flex flex-row gap-2'>
+                    <Button><HeartIcon/></Button>
+                    <Button onClick={handleQueueOpen}><QueueIcon/></Button>
+                </div>
+                </div>
             </div>
         </div>
     )
