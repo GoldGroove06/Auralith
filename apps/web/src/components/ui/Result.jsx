@@ -3,16 +3,16 @@ import ContextMenu from '@radui/ui/ContextMenu';
 import { usePlayStore } from '../utils/play';
 import play from '../utils/play';
 
-function Result({ results, playSong}) {
+function Result({ results, playSong }) {
   const queue = usePlayStore((state) => state.queue)
-  const addToQueue  = usePlayStore((state) => state.addToQueue)
+  const addToQueue = usePlayStore((state) => state.addToQueue)
   console.log(queue)
 
   return (
     <div style={{
       display: "grid",
       gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "5rem",
-    }} className='overflow-y-auto'>
+    }} className='overflow-y-auto w-full h-full'>
       {results.map((track) => {
         const trackDuration = { minutes: track.duration.split("PT")[1].split("M")[0], seconds: track.duration.split("PT")[1].split("M")[1].split("S")[0] }
         // console.log(track)
@@ -39,7 +39,7 @@ function Result({ results, playSong}) {
             </ContextMenu.Trigger>
             <ContextMenu.Portal>
               <ContextMenu.Content >
-                <Button onClick={() => addToQueue(track) } >Play Next</Button>
+                <Button onClick={() => addToQueue(track)} >Play Next</Button>
               </ContextMenu.Content>
             </ContextMenu.Portal>
           </ContextMenu.Root>

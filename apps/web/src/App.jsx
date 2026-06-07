@@ -1456,14 +1456,14 @@ function App() {
     return (
         <div style={{ position: "relative" }} className="h-screen">
             <Navbar />
-            <div style={{ display: "flex", flexDirection: "column", alignItems: "center", height: "80vh"}} className='relative'>
+            <div style={{ display: "flex", flexDirection: "column", alignItems: "center", height: "80vh" }} className='relative'>
                 {resultsFromStore.length > 0 && <Result results={resultsFromStore} />}
-                {isQueueOpen &&
-                <div className='absolute min-h-full min-w-full top-0'>
-                    <Queue/>
+
+                <div className={`absolute min-h-full min-w-full top-0 bottom-0 ${isQueueOpen ? "block" : "hidden"}`}>
+                    <Queue />
                 </div>
-                }
-                
+
+
             </div>
             <audio ref={audioRef} className='hidden'></audio>
             <Player audioRef={audioRef} handleQueueOpen={handleQueueOpen} />
